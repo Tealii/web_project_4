@@ -1,0 +1,19 @@
+.profile-info__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 154px 0 30px
+}
+
+@media (max-width: 960px) {
+  .profile-info__container {
+    padding-right: 0%;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile-info__container {
+    padding: 14px 0 36px 0;
+    justify-content: center;
+  }
+}

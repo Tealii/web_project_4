@@ -1,0 +1,19 @@
+@import url("./__container/profile__container.css");
+@import url("./__pic/profile__pic.css");
+@import url("./__add-button/profile__add-button.css");
+
+.profile {
+  max-width: 882px;
+}
+
+@media (max-width: 960px) {
+  .profile {
+    max-width: 582px;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile {
+    max-width: 282px;
+  }
+}

@@ -1,0 +1,18 @@
+.photo-grid__container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+@media (max-width: 960px) {
+  .photo-grid__container {
+    max-width: calc(100vw - 50px);
+  }
+}
+
+@media (max-width: 720px) {
+  .photo-grid__container {
+    max-width: calc(100vw - 38px);
+  }
+}
+

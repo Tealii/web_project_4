@@ -1,0 +1,11 @@
+@import url("./__container/photo-grid__container.css");
+@import url("./__items/photo-grid__items.css");
+@import url("./__item/photo-grid__item.css");
+@import url("./__pic/photo-grid__pic.css");
+@import url("./__bottom/photo-grid__bottom.css");
+@import url("./__title/photo-grid__title.css");
+@import url("./__heart-icon/photo-grid__heart-icon.css");
+
+.photo-grid {
+  max-width: 882px;
+}
