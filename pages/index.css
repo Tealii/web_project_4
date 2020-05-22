@@ -7,12 +7,14 @@
 @import url("../blocks/photo-grid/photo-grid.css");
 @import url("../blocks/footer/footer.css");
 
+
+
 .modal{
   position: fixed;
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  /* display: none;  */
+  display: none; 
   left: 0px;
   top: 0px;
 }
@@ -27,6 +29,28 @@
   opacity: .5;
 }
 
+.display-modal {
+  display: block;
+}
+
+.modal__exit-btn {
+  position: fixed;
+  transform: translate(230px, -35px) rotate(45deg);
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  background-image: url("../images/add-icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__exit-btn:hover {
+  opacity: .3;
+  cursor: pointer;
+}
 
 .modal__form-container {
   position: fixed;
@@ -45,6 +69,7 @@
 
 
 .modal__header {
+  font-size: 24px;
   font-weight: 900;
   line-height: 29px;
   display: inline-block;
@@ -77,4 +102,9 @@
   color: #fff;
   border-style: none;
   border-radius: 2px;
+}
+
+.modal__form-button:hover {
+  opacity: .8;
+  cursor: pointer;
 }

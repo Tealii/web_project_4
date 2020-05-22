@@ -3,6 +3,7 @@
 
 .header {
   max-width: 882px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 @media (max-width: 960px) {

@@ -1,3 +1,15 @@
 .photo-grid__heart-icon {
   margin: 0;
+  padding: 0;
+  background: transparent;
+  background-image: url("../../../images/heart-icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  width: 21px;
+  height: 18px;
+}
+
+.photo-grid__heart-icon:hover {
+  opacity: .8;
 }

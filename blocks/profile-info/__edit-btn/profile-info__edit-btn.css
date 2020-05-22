@@ -1,0 +1,23 @@
+.profile-info__edit-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  background-image: url("../../../images/pencil-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  padding: 7px;
+}
+
+.profile-info__edit-btn:hover {
+  opacity: .5;
+}
+
+@media (max-width: 720px) {
+  .profile-info__edit-btn {
+    width: 18px;
+    height: 18px;
+    padding: 5.25px;
+  }
+}
