@@ -1,0 +1,31 @@
+@import url("./__form-container/modal__form-container.css");
+@import url("./__exit-btn/modal__exit-btn.css");
+@import url("./__header/modal__header.css");
+@import url("./__form/modal__form.css");
+@import url("./__form-name/modal__form-name.css");
+@import url("./__form-about/modal__form-about.css");
+@import url("./__form-submit/modal__form-submit.css");
+
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: none; 
+  left: 0px;
+  top: 0px;
+}
+.modal::before{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .5;
+}
+
+.display-modal {
+  display: block;
+}

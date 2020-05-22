@@ -1,0 +1,15 @@
+.modal__form-submit {
+  margin-top: 19px;
+  height: 50px;
+  background-color: #000;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  border-style: none;
+  border-radius: 2px;
+}
+
+.modal__form-submit:hover {
+  opacity: .8;
+  cursor: pointer;
+}
