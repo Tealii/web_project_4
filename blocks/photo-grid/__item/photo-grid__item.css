@@ -1,4 +1,9 @@
 .photo-grid__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: #fff;
   border-radius: 11px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }

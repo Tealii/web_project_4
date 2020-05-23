@@ -1,6 +1,10 @@
 .photo-grid__title {
+  width: 213px;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
