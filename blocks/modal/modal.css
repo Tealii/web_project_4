@@ -26,6 +26,6 @@
   opacity: .5;
 }
 
-.display-modal {
+.modal_active {
   display: block;
 }

@@ -10,25 +10,25 @@ const form = modal.querySelector(".modal__form");
 
 
 // opening/closing modal
-editBtn.addEventListener("click", openCloseModal);
-closeBtn.addEventListener("click", openCloseModal);
-saveBtn.addEventListener("click", openCloseModal);
-
 function openCloseModal() {
-  modal.classList.toggle("display-modal");
+  modal.classList.toggle("modal_active");
 }
 
 // form handler
-form.addEventListener("submit", formSubmit);
-
 function formSubmit(evt) {
   evt.preventDefault();
-  let nameInput = modal.querySelector(".modal__form-name");
-  let aboutInput = modal.querySelector(".modal__form-about");
-
-  let name = document.querySelector(".profile-info__name");
-  let about = document.querySelector(".profile-info__about");
-
+  const nameInput = modal.querySelector(".modal__form-name");
+  const aboutInput = modal.querySelector(".modal__form-about");
+  
+  const name = document.querySelector(".profile-info__name");
+  const about = document.querySelector(".profile-info__about");
+  
   name.textContent = nameInput.value;
   about.textContent = aboutInput.value;
 }
+
+// events
+editBtn.addEventListener("click", openCloseModal);
+closeBtn.addEventListener("click", openCloseModal);
+saveBtn.addEventListener("click", openCloseModal);
+form.addEventListener("submit", formSubmit);

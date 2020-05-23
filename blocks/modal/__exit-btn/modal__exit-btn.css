@@ -1,6 +1,8 @@
 .modal__exit-btn {
-  position: fixed;
-  transform: translate(230px, -35px) rotate(45deg);
+  position: absolute;
+  top: -35px;
+  left: 425px;
+  transform: rotate(45deg);
   width: 40px;
   height: 40px;
   background: transparent;
@@ -19,6 +21,7 @@
 
 @media (max-width: 720px) {
   .modal__exit-btn {
-    transform: translate(175px, -35px) rotate(45deg);
+    left: 245px;
+    transform: rotate(45deg);
   }
 }
