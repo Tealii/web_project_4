@@ -45,3 +45,22 @@ I just thought it'd a cool addition */
   background-position: center;
   height: 5px;
 }
+
+
+
+.modal__fig-container {
+  width: 433px;
+  height: 540px;
+  background: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.modal__fig {
+  margin: 0;
+}
