@@ -7,3 +7,41 @@
 @import url("../blocks/photo-grid/photo-grid.css");
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/modal/modal.css");
+
+
+.trashcan-container {
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  background: transparent;
+  border: none;
+  width: 18px;
+  padding: 0;
+  position: absolute;
+  top: 19px;
+  right:15px;
+}
+
+.trashcan-container:hover {
+  opacity: .8;
+}
+
+/* I know this is extra, please don't ping me for this! >.< 
+I just thought it'd a cool addition */
+.trashcan-container:hover > .trashcan-container__lid {
+  transform: translate(4px, -5px) rotate(45deg);
+}
+
+.trashcan-container__body {
+  background-image: url("../images/trashcan-body.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15px;
+}
+
+.trashcan-container__lid {
+  background-image: url("../images/trashcan-lid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5px;
+}

@@ -27,6 +27,7 @@ function formSubmit(evt) {
   about.textContent = aboutInput.value;
 }
 
+
 // events
 editBtn.addEventListener("click", openCloseModal);
 closeBtn.addEventListener("click", openCloseModal);
