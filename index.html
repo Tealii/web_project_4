@@ -117,9 +117,21 @@
         <button class="modal__exit-btn"></button>
         <p class="modal__header">Edit profile</p>
         <form class="modal__form">
-          <input class="modal__form-name" type="text" id="name" name="name" placeholder="Name" value="Jacques Cousteau" autocomplete="off">
-          <input class="modal__form-about" type="text" id="about-me" name="about-me" placeholder="About me" value="Explorer" autocomplete="off">
+          <input class="modal__input modal__input_type_name" type="text" id="name" name="name" placeholder="Name" value="Jacques Cousteau" autocomplete="off">
+          <input class="modal__input modal__input_type_about" type="text" id="about-me" name="about-me" placeholder="About me" value="Explorer" autocomplete="off">
           <button class="modal__form-submit" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal create-modal">
+      <div class="modal__form-container">
+        <button class="modal__exit-btn"></button>
+        <p class="modal__header">New place</p>
+        <form class="modal__form">
+          <input class="modal__input modal__input_type_title" type="text" id="title" name="title" placeholder="Title" autocomplete="off">
+          <input class="modal__input modal__input_type_img-link" type="text" id="img-link" name="img-link" placeholder="Image link" autocomplete="off">
+          <button class="modal__form-submit" type="submit">Create</button>
         </form>
       </div>
     </div>
