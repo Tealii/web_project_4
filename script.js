@@ -10,13 +10,15 @@ const saveBtn = modal.querySelector(".modal__form-submit")
 const form = modal.querySelector(".modal__form");
 const addBtn = document.querySelector(".profile__add-button");
 
+const heartBtn = document.querySelectorAll(".photo-grid__heart-icon");
+
 const nameInput = modal.querySelector(".modal__input_type_name");
 const aboutInput = modal.querySelector(".modal__input_type_about");
 
 const name = document.querySelector(".profile-info__name");
 const about = document.querySelector(".profile-info__about");
 
-const pic = document.querySelectorAll(".photo-grid__item");
+const pic = document.querySelectorAll(".photo-grid__pic");
 
 
 // opening/closing modals
@@ -52,6 +54,12 @@ closeBtn.forEach( closeBtn => {
   closeBtn.addEventListener("click", closeModal);
 });
 
+// heart toggle
+heartBtn.forEach (heart => {
+  heart.addEventListener("click", (e) => {
+    heart.classList.toggle("photo-grid__heart-icon_color_filled");
+  });
+});
 
 // form handler
 function formSubmit(evt) {

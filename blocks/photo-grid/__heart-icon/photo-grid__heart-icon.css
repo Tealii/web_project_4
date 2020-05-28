@@ -13,3 +13,7 @@
 .photo-grid__heart-icon:hover {
   opacity: .8;
 }
+
+.photo-grid__heart-icon_color_filled {
+  background-image: url("../../../images/filled-heart-icon.svg");
+}

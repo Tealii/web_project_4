@@ -1,4 +1,6 @@
-/* .photo-grid__pic {
+.photo-grid__pic {
   width: 282px;
   height: 282px;
-} */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
