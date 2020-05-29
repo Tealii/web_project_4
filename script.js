@@ -9,6 +9,8 @@ const closeBtn = document.querySelectorAll(".modal__exit-btn");
 const saveBtn = modal.querySelector(".modal__form-submit")
 const form = modal.querySelector(".modal__form");
 const addBtn = document.querySelector(".profile__add-button");
+const figModalImg = figModal.querySelector(".modal__fig");
+const figCap = figModal.querySelector(".modal__figcaption");
 
 const heartBtn = document.querySelectorAll(".photo-grid__heart-icon");
 
@@ -30,14 +32,19 @@ function toggleCreateModal() {
   createModal.classList.toggle("modal_active");
 }
 
+
   pic.forEach( pic => {
     pic.addEventListener("click", (e) => {
       figModal.classList.toggle("modal_active");
-      figModal.src = this.src;
+      figModalImg.src = "./images/Lago-di-Braies.png"; 
+      // = this.src; not working
+      console.log("hi");
+      figCap.innerHTML = "boo";
+      // = this.alt; not working
     });
   });
 
-
+  
  function closeModal(){
    if (figModal.classList.contains("modal_active") ||
    profileModal.classList.contains("modal_active") ||
