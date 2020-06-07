@@ -14,6 +14,6 @@
   opacity: .8;
 }
 
-.photo-grid__heart-icon_color_filled {
+.photo-grid__heart-icon_active {
   background-image: url("../../../images/filled-heart-icon.svg");
 }
