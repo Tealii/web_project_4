@@ -127,7 +127,6 @@ function addPlace(placeTitleValue, placeLinkValue) {
 }
 
 
-initialCards.reverse();
 initialCards.forEach(elem => addPlace(elem.name, elem.link));
 
   
