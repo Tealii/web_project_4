@@ -27,7 +27,6 @@ const initialCards = [
   }
 ];
 
-
 // modals
 const modal = document.querySelector(".modal");
 const profileModal = document.querySelector(".profile-modal");
@@ -50,15 +49,13 @@ const figModalImg = figModal.querySelector(".modal__fig");
 const figCap = figModal.querySelector(".modal__figcaption");
 
 // form inputs
+const name = document.querySelector(".profile-info__name");
+const about = document.querySelector(".profile-info__about");
 const nameInput = modal.querySelector(".modal__input_type_name");
 const aboutInput = modal.querySelector(".modal__input_type_about");
 
-const name = document.querySelector(".profile-info__name");
-const about = document.querySelector(".profile-info__about");
-
-// template
+// template stuff
 const photoTemplate = document.querySelector("#photo-template").content;
-
 const placeTitle = createModal.querySelector(".modal__input_type_title");
 const placeLink = createModal.querySelector(".modal__input_type_img-link");
 
@@ -77,18 +74,16 @@ function addPlace(placeTitleValue, placeLinkValue) {
   picTitle.textContent = placeTitleValue;
   // pic.setAttribute("style", `background-image: url(${placeLinkValue})`);
   
-  // heart
+  // events for heart and trash
   picHeart.addEventListener("click", (evt) => {
     evt.target.classList.toggle("photo-grid__heart-icon_active");
   });
-  
-  // trash
   picTrash.addEventListener("click", () => {
     picTrash.parentElement.remove();
   })
 
   // pic pop-up
-  // don't know how I'd get this to work if pic was a div tag
+  // don't know how to get this to work if pic was a div tag
   // with bg image instead.
   pic.addEventListener("click", function(e) {
     figModalImg.src = e.target.src;
@@ -105,12 +100,6 @@ function addPlace(placeTitleValue, placeLinkValue) {
 initialCards.reverse();
 initialCards.forEach(elem => addPlace(elem.name, elem.link));
 
-
-addBtn.addEventListener("click", () => {
-  openModal(createModal);
-  // console.log("1");
-});
-
 // opening/closing modals
 function openModal(modalElem) {
   modalElem.classList.toggle("modal_active");
@@ -120,17 +109,21 @@ function closeModal(){
   if (figModal.classList.contains("modal_active") ||
   profileModal.classList.contains("modal_active") ||
   createModal.classList.contains("modal_active")) {
-     
+    
     figModal.classList.remove("modal_active");
     profileModal.classList.remove("modal_active");
     createModal.classList.remove("modal_active");
   }
 }
-  
+
+addBtn.addEventListener("click", () => {
+  openModal(createModal);
+  // console.log("1");
+});
+
 closeBtn.forEach( closeBtn => {
   closeBtn.addEventListener("click", closeModal);
 });
-  
   
 // form handler
 function profileFormSubmit(evt) {
@@ -145,8 +138,7 @@ function createFormSubmit(evt) {
   // console.log("4");
 }
 
-
-// events
+// events for buttons
 editBtn.addEventListener("click", () => {
   openModal(profileModal);
 });

@@ -15,18 +15,13 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  display: none; 
+  /* display: none;  */
   left: 0px;
   top: 0px;
-  
-  /* transition: opacity 1s ease-in-out;
-  opacity: 0;
-  height: 0;
-  overflow: hidden; */
-
-  /* visibility:hidden;
+ 
+  visibility:hidden;
   opacity:0;
-  transition:visibility 0s linear 0.5s,opacity 0.5s linear; */
+  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 }
 .modal::before{
   content: "";
@@ -42,34 +37,6 @@
 .modal_active {
   display: block;
 
-
-  /* opacity: 1;
-    height: auto; */
-}
-
-
-/* .modal {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-} */
-
-
-.modal > .modal__fig-container {
-  visibility:hidden;
-  opacity:0;
-  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
-}
-.modal > .modal__form-container {
-  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
-  visibility:visible;
-  opacity:0;
-}
-.modal:hover > .modal__fig-container {
-  visibility:visible;
-  opacity:1;
-  transition-delay:0s;
-}
-.modal:hover > .modal__form-container {
   visibility:visible;
   opacity:1;
   transition-delay:0s;
