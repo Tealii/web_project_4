@@ -19,7 +19,14 @@
 }
 
 /* I know this is extra, please don't ping me for this! >.< 
-I just thought it'd a cool addition */
+I just thought it'd be a cool addition.
+May try to figure out how to do 
+with pseudo elements later */
+.trash-container > .trash-container__lid {
+  transition: transform .5s ease-in-out;
+}
+
 .trash-container:hover > .trash-container__lid {
   transform: translate(4px, -5px) rotate(45deg);
+  transition-delay: 0s;
 }

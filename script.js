@@ -34,15 +34,18 @@ const figModal = document.querySelector(".fig-modal");
 const createModal = document.querySelector(".create-modal");
 
 // buttons
+const addBtn = document.querySelector(".profile__add-button");
 const editBtn = document.querySelector(".profile-info__edit-btn");
-const closeBtn = document.querySelectorAll(".modal__exit-btn");
 const saveBtn = modal.querySelector(".modal__form-submit");
 const profileForm = modal.querySelector(".profile-form");
 const createBtn = createModal.querySelector(".modal__form-submit");
 const createForm = createModal.querySelector(".create-form");
-// const form = modal.querySelector(".modal__form");
-const addBtn = document.querySelector(".profile__add-button");
-const heartBtn = document.querySelectorAll(".photo-grid__heart-icon");
+
+// close buttons
+const profileCloseBtn = profileModal.querySelector(".modal__exit-btn");
+const createCloseBtn = createModal.querySelector(".modal__exit-btn");
+const figCloseBtn = figModal.querySelector(".modal__exit-btn");
+
 
 // elements dealing with figure modal
 const figModalImg = figModal.querySelector(".modal__fig");
@@ -59,7 +62,36 @@ const photoTemplate = document.querySelector("#photo-template").content;
 const placeTitle = createModal.querySelector(".modal__input_type_title");
 const placeLink = createModal.querySelector(".modal__input_type_img-link");
 
-// functions & methods
+// opening/closing modals
+function toggleModal(modalElem) {
+  modalElem.classList.toggle("modal_active");
+}
+
+function closeModal(modalElem) {
+  if (modalElem.classList.contains("modal_actvie")) {
+    modalElem.classList.remove("modal_active");
+  }
+}
+
+addBtn.addEventListener("click", () => {
+  toggleModal(createModal);
+});
+profileCloseBtn.addEventListener("click", () => {
+  toggleModal(profileModal);
+});
+createCloseBtn.addEventListener("click", () => {
+  toggleModal(createModal);
+});
+figCloseBtn.addEventListener("click", () => {
+  toggleModal(figModal);
+});
+
+
+// functions & methods dealing with popUps and cards
+function insertCard(elem) {
+  photoContainer.prepend(elem);
+}
+
 function addPlace(placeTitleValue, placeLinkValue) {
   // if photoElem is placed out it doesn't seem to work..
   const photoElem = photoTemplate.cloneNode(true);
@@ -80,52 +112,26 @@ function addPlace(placeTitleValue, placeLinkValue) {
   });
   picTrash.addEventListener("click", () => {
     picTrash.parentElement.remove();
-  })
+  });
 
   // pic pop-up
-  // don't know how to get this to work if pic was a div tag
-  // with bg image instead.
-  pic.addEventListener("click", function(e) {
+  pic.addEventListener("click", (e) => {
     figModalImg.src = e.target.src;
     figCap.alt = e.target.alt;
     figCap.textContent = e.target.alt;
     
-    openModal(figModal);
+    toggleModal(figModal);
   });
   
-  photoContainer.prepend(photoElem);
-  console.log("2");
+  insertCard(photoElem);
 }
+
 
 initialCards.reverse();
 initialCards.forEach(elem => addPlace(elem.name, elem.link));
 
-// opening/closing modals
-function openModal(modalElem) {
-  modalElem.classList.toggle("modal_active");
-}
-
-function closeModal(){
-  if (figModal.classList.contains("modal_active") ||
-  profileModal.classList.contains("modal_active") ||
-  createModal.classList.contains("modal_active")) {
-    
-    figModal.classList.remove("modal_active");
-    profileModal.classList.remove("modal_active");
-    createModal.classList.remove("modal_active");
-  }
-}
-
-addBtn.addEventListener("click", () => {
-  openModal(createModal);
-  // console.log("1");
-});
-
-closeBtn.forEach( closeBtn => {
-  closeBtn.addEventListener("click", closeModal);
-});
   
-// form handler
+// form handlers
 function profileFormSubmit(evt) {
   evt.preventDefault();
   
@@ -135,20 +141,18 @@ function profileFormSubmit(evt) {
 
 function createFormSubmit(evt) {
   evt.preventDefault();
-  // console.log("4");
+  addPlace(placeTitle.value, placeLink.value);
 }
 
 // events for buttons
 editBtn.addEventListener("click", () => {
-  openModal(profileModal);
+  toggleModal(profileModal);
 });
 saveBtn.addEventListener("click", () => {
-  openModal(profileModal);
+  toggleModal(profileModal);
 });
 createBtn.addEventListener("click", () => {
-  openModal(createModal);
-  addPlace(placeTitle.value, placeLink.value);
-  // console.log("3");
+  toggleModal(createModal);
 });
 profileForm.addEventListener("submit", profileFormSubmit);
 createForm.addEventListener("submit", createFormSubmit);

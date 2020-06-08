@@ -32,24 +32,11 @@
       
       <section class="photo-grid photo-grid__container">
         <div class="photo-grid__items">
-          <template id="photo-template">
-            <li class="photo-grid__item" >
-              <img class="photo-grid__pic photo-grid__pic-container" src="" alt="">
-              <!-- <div class="photo-grid__pic photo-grid__pic-container" ></div> -->
-              <button class="trash-container">
-                <div class="trash-container__lid"></div>
-                <div class="trash-container__body"></div>
-              </button>
-              <div class="photo-grid__bottom">
-                <h2 class="photo-grid__title"></h2>
-                <button class="photo-grid__heart-icon"></button>
-              </div>
-            </li >
-          </template>
+          <!-- card template appears here -->
         </div>
       </section>
     </main>
-
+    
     <div class="modal profile-modal">
       <div class="modal__form-container">
         <button class="modal__exit-btn"></button>
@@ -61,7 +48,7 @@
         </form>
       </div>
     </div>
-
+    
     <div class="modal create-modal">
       <div class="modal__form-container">
         <button class="modal__exit-btn"></button>
@@ -77,16 +64,32 @@
     <div class="modal fig-modal">
       <div class="modal__fig-container">
         <button class="modal__exit-btn"></button>
-        <img class="modal__fig" src="" alt=""></img>
-        <p class="modal__figcaption">is it working?</p>
+        <img class="modal__fig" src="" alt="">
+        <p class="modal__figcaption"></p>
       </div>
     </div>
-
+    
 
     <footer class="footer footer__container">
       <p class="footer__copyright">© 2020 Around The U.S.</p>
     </footer>
 
+    <!-- card template -->
+    <template id="photo-template">
+      <li class="photo-grid__item" >
+        <img class="photo-grid__pic photo-grid__pic-container" src="" alt="">
+        <!-- <div class="photo-grid__pic photo-grid__pic-container" ></div> -->
+        <button class="trash-container">
+          <div class="trash-container__lid"></div>
+          <div class="trash-container__body"></div>
+        </button>
+        <div class="photo-grid__bottom">
+          <h2 class="photo-grid__title"></h2>
+          <button class="photo-grid__heart-icon"></button>
+        </div>
+      </li >
+    </template>
+    
     <script src="script.js"></script>
   </body>
 </html>
