@@ -67,11 +67,6 @@ function toggleModal(modalElem) {
   modalElem.classList.toggle("modal_active");
 }
 
-function closeModal(modalElem) {
-  if (modalElem.classList.contains("modal_actvie")) {
-    modalElem.classList.remove("modal_active");
-  }
-}
 
 addBtn.addEventListener("click", () => {
   toggleModal(createModal);
@@ -88,12 +83,7 @@ figCloseBtn.addEventListener("click", () => {
 
 
 // functions & methods dealing with popUps and cards
-function insertCard(elem) {
-  photoContainer.prepend(elem);
-}
-
 function addPlace(placeTitleValue, placeLinkValue) {
-  // if photoElem is placed out it doesn't seem to work..
   const photoElem = photoTemplate.cloneNode(true);
   const pic = photoElem.querySelector(".photo-grid__pic");
   const picTitle = photoElem.querySelector(".photo-grid__title");
@@ -123,11 +113,14 @@ function addPlace(placeTitleValue, placeLinkValue) {
     toggleModal(figModal);
   });
   
-  insertCard(photoElem);
+  return photoElem;
 }
 
+function insertCard(placeTitleValue, placeLinkValue) {
+  photoContainer.prepend(addPlace(placeTitleValue, placeLinkValue));
+}
 
-initialCards.forEach(elem => addPlace(elem.name, elem.link));
+initialCards.forEach((elem) => insertCard(elem.name, elem.link));
 
   
 // form handlers
@@ -140,7 +133,7 @@ function profileFormSubmit(evt) {
 
 function createFormSubmit(evt) {
   evt.preventDefault();
-  addPlace(placeTitle.value, placeLink.value);
+  insertCard(placeTitle.value, placeLink.value);
 }
 
 // events for buttons
