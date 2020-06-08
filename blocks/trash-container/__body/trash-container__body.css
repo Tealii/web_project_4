@@ -1,0 +1,6 @@
+.trash-container__body {
+  background-image: url("../../../images/trashcan-body.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15px;
+}

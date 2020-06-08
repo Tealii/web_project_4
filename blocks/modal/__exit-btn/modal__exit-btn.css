@@ -1,7 +1,7 @@
 .modal__exit-btn {
   position: absolute;
-  top: -35px;
-  left: 425px;
+  top: -40px;
+  right: -40px;
   transform: rotate(45deg);
   width: 40px;
   height: 40px;
@@ -12,6 +12,9 @@
   border: none;
   padding: 0;
   margin: 0;
+
+  display: flex;
+  justify-content: flex-end;
 }
 
 .modal__exit-btn:hover {

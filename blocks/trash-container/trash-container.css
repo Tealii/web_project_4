@@ -1,0 +1,25 @@
+@import url("./__lid/trash-container__lid.css");
+@import url("./__body/trash-container__body.css");
+
+.trash-container {
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  background: transparent;
+  border: none;
+  width: 18px;
+  padding: 0;
+  position: absolute;
+  top: 19px;
+  right:15px;
+}
+
+.trash-container:hover {
+  opacity: .8;
+}
+
+/* I know this is extra, please don't ping me for this! >.< 
+I just thought it'd a cool addition */
+.trash-container:hover > .trash-container__lid {
+  transform: translate(4px, -5px) rotate(45deg);
+}

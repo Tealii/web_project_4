@@ -1,0 +1,6 @@
+.trash-container__lid {
+  background-image: url("../../../images/trashcan-lid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5px;
+}

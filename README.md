@@ -2,7 +2,9 @@
 
 ### Description
 
-* Webpage that allows users to update name and about info.
+Webpage that allows users to edit name and about info,
+as well as add new place cards with chossen image and title.
+
 
 ### Technologies used
 

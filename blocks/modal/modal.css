@@ -5,6 +5,11 @@
 @import url("./__input/modal__input.css");
 @import url("./__form-submit/modal__form-submit.css");
 
+/* @keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+} */
+
 .modal{
   position: fixed;
   width: 100%;
@@ -13,6 +18,15 @@
   display: none; 
   left: 0px;
   top: 0px;
+  
+  /* transition: opacity 1s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden; */
+
+  /* visibility:hidden;
+  opacity:0;
+  transition:visibility 0s linear 0.5s,opacity 0.5s linear; */
 }
 .modal::before{
   content: "";
@@ -27,4 +41,36 @@
 
 .modal_active {
   display: block;
+
+
+  /* opacity: 1;
+    height: auto; */
+}
+
+
+/* .modal {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+} */
+
+
+.modal > .modal__fig-container {
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+}
+.modal > .modal__form-container {
+  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+  visibility:visible;
+  opacity:0;
+}
+.modal:hover > .modal__fig-container {
+  visibility:visible;
+  opacity:1;
+  transition-delay:0s;
+}
+.modal:hover > .modal__form-container {
+  visibility:visible;
+  opacity:1;
+  transition-delay:0s;
 }
