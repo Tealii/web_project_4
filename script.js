@@ -94,7 +94,6 @@ function addPlace(placeTitleValue, placeLinkValue) {
   pic.textContent = placeTitleValue;
   
   picTitle.textContent = placeTitleValue;
-  // pic.setAttribute("style", `background-image: url(${placeLinkValue})`);
   
   // events for heart and trash
   picHeart.addEventListener("click", (evt) => {
@@ -122,7 +121,7 @@ function insertCard(placeTitleValue, placeLinkValue) {
 
 initialCards.forEach((elem) => insertCard(elem.name, elem.link));
 
-  
+
 // form handlers
 function profileFormSubmit(evt) {
   evt.preventDefault();
@@ -136,6 +135,28 @@ function createFormSubmit(evt) {
   insertCard(placeTitle.value, placeLink.value);
 }
 
+// escape key and "click out" way of closing modal
+const escModal = () => {
+  const modalList = Array.from(document.querySelectorAll(".modal"));
+  
+  modalList.forEach((modal) => {
+    modal.addEventListener("click", (evt) => {
+      toggleModal(evt.target);
+    });
+  });
+
+  modalList.forEach(() => {
+    document.addEventListener("keydown", (evt) => {
+      const escKey = 27;
+      if (evt.keyCode === escKey) {
+        toggleModal(document.querySelector(".modal_active"));
+      }
+    });
+  });
+};
+
+escModal();
+
 // events for buttons
 editBtn.addEventListener("click", () => {
   toggleModal(profileModal);
@@ -148,3 +169,4 @@ createBtn.addEventListener("click", () => {
 });
 profileForm.addEventListener("submit", profileFormSubmit);
 createForm.addEventListener("submit", createFormSubmit);
+

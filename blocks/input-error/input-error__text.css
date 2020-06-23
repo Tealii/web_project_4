@@ -1,0 +1,13 @@
+/* @import url("./_active/input-error_active.css"); */
+
+.input-error__text {
+  opacity: 0;
+  color: #f00;
+  font-style:normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0 36px 10px 0;
+  padding-top: 0;
+  transition: opacity .3s ease-in;
+}

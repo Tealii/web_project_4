@@ -1,7 +1,9 @@
+/* @import url("./_type/modal__input_type_error.css"); */
+
 .modal__input {
   height: 27px;
   border-style: none;
-  margin-bottom: 29px;
+  margin-top: 29px;
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(0,0,0,.2);
   box-sizing: border-box;

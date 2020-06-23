@@ -41,9 +41,18 @@
       <div class="modal__form-container">
         <button class="modal__exit-btn"></button>
         <p class="modal__header">Edit profile</p>
-        <form class="modal__form profile-form">
-          <input class="modal__input modal__input_type_name" type="text" id="name" name="name" placeholder="Name" value="Jacques Cousteau" autocomplete="off">
-          <input class="modal__input modal__input_type_about" type="text" id="about-me" name="about-me" placeholder="About me" value="Explorer" autocomplete="off">
+
+        <form novalidate class="modal__form profile-form">
+          <input required id="name" class="modal__input modal__input_type_name" type="text" id="name" name="name" placeholder="Name" value="Jacques Cousteau" autocomplete="off"
+          minlength="2" maxlength="40">
+          <span id="name-error" class="input-error
+          input-error__text"></span>
+
+          <input required id="about"  class="modal__input modal__input_type_about" type="text" id="about-me" name="about-me" placeholder="About me" value="Explorer" autocomplete="off"
+          minlength="2" maxlength="200">
+          <span id="about-error" class="input-error
+          input-error__text"></span>
+
           <button class="modal__form-submit " type="submit">Save</button>
         </form>
       </div>
@@ -53,9 +62,17 @@
       <div class="modal__form-container">
         <button class="modal__exit-btn"></button>
         <p class="modal__header">New place</p>
-        <form class="modal__form create-form">
-          <input class="modal__input modal__input_type_title" type="text" id="title" name="title" placeholder="Title" autocomplete="off">
-          <input class="modal__input modal__input_type_img-link" type="text" id="img-link" name="img-link" placeholder="Image link" autocomplete="off">
+
+        <form novalidate class="modal__form create-form">
+          <input required id="imgTitle" class="modal__input modal__input_type_title" type="text" id="title" name="title" placeholder="Title" autocomplete="off"
+          minlength="1" maxlength="30">
+          <span id="imgTitle-error" class="input-error
+          input-error__text"></span>
+
+          <input required id="imgLink"  class="modal__input modal__input_type_img-link" type="url" id="img-link" name="img-link" placeholder="Image link" autocomplete="off">
+          <span id="imgLink-error" class="input-error
+          input-error__text"></span>
+
           <button class="modal__form-submit" type="submit">Create</button>
         </form>
       </div>
@@ -91,5 +108,6 @@
     </template>
     
     <script src="script.js"></script>
+    <script src="validate.js"></script>
   </body>
 </html>
