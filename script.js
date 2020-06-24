@@ -144,6 +144,7 @@ const escModal = () => {
       toggleModal(evt.target);
     });
   });
+   
 
   modalList.forEach(() => {
     document.addEventListener("keydown", (evt) => {
