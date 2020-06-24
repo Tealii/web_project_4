@@ -76,7 +76,7 @@ enableValidation({
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__form-submit",
-  inactiveButtonClass: ".modal__form-submit_inactive",
-  inputErrorClass: ".modal__input_type_error",
-  errorClass: ".input-error_active"
+  inactiveButtonClass: "modal__form-submit_inactive",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "input-error_active"
 });

@@ -1,6 +1,7 @@
 /* @import url("./_type/modal__input_type_error.css"); */
 
 .modal__input {
+  width: calc(100% - 72px);
   height: 27px;
   border-style: none;
   margin-top: 29px;
