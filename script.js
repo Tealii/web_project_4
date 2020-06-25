@@ -135,31 +135,35 @@ function createFormSubmit(evt) {
   insertCard(placeTitle.value, placeLink.value);
 }
 
-// escape key and "click out" way of closing modal
-function escKey(evt) {
+// escape key and "click out" ways of closing modal
+
+function closeOverlay(evt) {
+  toggleModal(evt.target.closest(".modal"));
+  evt.target.removeEventListener("click", closeOverlay);
+}
+
+function escKeyOverlay(evt) {
   const escKeyCode = 27;
   if (evt.keyCode === escKeyCode) {
     toggleModal(document.querySelector(".modal_active"));
   }
-  evt.target.removeEventListener("keydown", escKey);
+  evt.target.removeEventListener("keyup", escKeyOverlay);
 }
 
-const escModal = () => {
+const altCloseModal = () => {
   const modalList = Array.from(document.querySelectorAll(".modal"));
   
   modalList.forEach((modalElem) => {
-    modalElem.addEventListener("click", (evt) => {
-      toggleModal(evt.target);
-    });
+    modalElem.addEventListener("click", closeOverlay);
   });
    
 
   modalList.forEach(() => {
-    document.addEventListener("keydown", escKey);
+    document.addEventListener("keyup", escKeyOverlay);
   });
 };
 
-escModal();
+altCloseModal();
 
 // events for buttons
 editBtn.addEventListener("click", () => {
