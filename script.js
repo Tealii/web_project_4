@@ -136,23 +136,26 @@ function createFormSubmit(evt) {
 }
 
 // escape key and "click out" way of closing modal
+function escKey(evt) {
+  const escKeyCode = 27;
+  if (evt.keyCode === escKeyCode) {
+    toggleModal(document.querySelector(".modal_active"));
+  }
+  evt.target.removeEventListener("keydown", escKey);
+}
+
 const escModal = () => {
   const modalList = Array.from(document.querySelectorAll(".modal"));
   
-  modalList.forEach((modal) => {
-    modal.addEventListener("click", (evt) => {
+  modalList.forEach((modalElem) => {
+    modalElem.addEventListener("click", (evt) => {
       toggleModal(evt.target);
     });
   });
    
 
   modalList.forEach(() => {
-    document.addEventListener("keydown", (evt) => {
-      const escKey = 27;
-      if (evt.keyCode === escKey) {
-        toggleModal(document.querySelector(".modal_active"));
-      }
-    });
+    document.addEventListener("keydown", escKey);
   });
 };
 
