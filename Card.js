@@ -3,8 +3,8 @@
 
 class Card {
   constructor(data, cardTemplateSelector) {
-    this._link = data.link;
-    this._text = data.text;
+    this._image = data.link;
+    this._title = data.name;
     
     this._cardTemplateSelector = cardTemplateSelector;
     
@@ -16,7 +16,7 @@ class Card {
   _getCardTemplate() {
     const photoTemplate = document
       .querySelector(this._cardTemplateSelector)
-      .content
+      .content.querySelector(".photo-grid__item")
       .cloneNode(true);
 
     return photoTemplate;
@@ -28,8 +28,8 @@ class Card {
     this._likeBtn.addEventListener("click", (evt) => {
       evt.target.classList.toggle("photo-grid__heart-icon_active");
     });
-    this._trashBtn.addEventListener("click", () => {
-      picTrash.parentElement.remove();
+    this._trashBtn.addEventListener("click", (evt) => {
+      this._trashBtn.parentElement.remove();
     });
 
     // pic pop-up
@@ -48,9 +48,9 @@ class Card {
   }
 
   generateCard = () => {
-    this._element.querySelector(".photo-grid__pic").src = this._link;
-    this._element.querySelector(".photo-grid__pic").alt = this._text;
-    this._element.querySelector(".photo-grid__title").textContent = this._text;
+    this._element.querySelector(".photo-grid__pic").src = this._image;
+    this._element.querySelector(".photo-grid__pic").alt = this._title;
+    this._element.querySelector(".photo-grid__title").textContent = this._title;
 
     this._addEventListeners();
     
@@ -59,3 +59,5 @@ class Card {
 
 }
 
+
+export {Card};
