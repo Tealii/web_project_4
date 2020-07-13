@@ -1,6 +1,7 @@
 
 import {FormValidator} from "./FormValidator.js";
 import {Card} from "./Card.js";
+import {toggleModal} from "./toggles.js";
 
 const photoContainer = document.querySelector(".photo-grid__items");
 const initialCards = [
@@ -71,11 +72,6 @@ addCardValidation.enableValidation();
 const photoTemplateSelector = "#photo-template"
 
 // opening/closing modals
-function toggleModal(modalElem) {
-  modalElem.classList.toggle("modal_active");
-}
-
-
 addBtn.addEventListener("click", () => {
   toggleModal(createModal);
 });
@@ -90,7 +86,7 @@ figCloseBtn.addEventListener("click", () => {
 });
 
 
-
+// generate card
 function insertCard(data) {
   const card = new Card(data, photoTemplateSelector);
 
@@ -110,16 +106,13 @@ function profileFormSubmit(evt) {
 
 function createFormSubmit(evt) {
   evt.preventDefault();
-  insertCard(placeTitle.value, placeLink.value);
+  insertCard(data);
+
+  createForm.reset();
 }
+
 
 // escape key and "click out" ways of closing modal
-
-function closeOverlay(evt) {
-  toggleModal(evt.target.closest(".modal"));
-  evt.target.removeEventListener("click", closeOverlay);
-}
-
 function escKeyOverlay(evt) {
   const escKeyCode = 27;
   if (evt.keyCode === escKeyCode) {
@@ -130,11 +123,13 @@ function escKeyOverlay(evt) {
 
 const altCloseModal = () => {
   const modalList = Array.from(document.querySelectorAll(".modal"));
-  
-  modalList.forEach((modalElem) => {
-    modalElem.addEventListener("click", closeOverlay);
+  modalList.forEach( (modal) => {
+      modal.addEventListener("click", (evt) => {
+      toggleModal(evt.target);
+      });
+
   });
-   
+
 
   modalList.forEach(() => {
     document.addEventListener("keyup", escKeyOverlay);

@@ -1,4 +1,4 @@
-
+import {toggleModal} from "./toggles.js"
 
 
 class Card {
