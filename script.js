@@ -1,4 +1,21 @@
 
+import FormValidator from "FormValidator.js";
+
+const defaultConfig = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__form-submit",
+  inactiveButtonClass: "modal__form-submit_inactive",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "input-error_active"
+}
+
+const editProfileValidation = new FormValidator(defaultConfig, profileForm);
+const addCardValidation = new FormValidator(defaultConfig, createForm);
+
+editProfileValidation.enableValidation();
+addCardValidation.enableValidation();
+
+
 const photoContainer = document.querySelector(".photo-grid__items");
 const initialCards = [
   {
@@ -37,7 +54,7 @@ const createModal = document.querySelector(".create-modal");
 const addBtn = document.querySelector(".profile__add-button");
 const editBtn = document.querySelector(".profile-info__edit-btn");
 const saveBtn = modal.querySelector(".modal__form-submit");
-const profileForm = modal.querySelector(".profile-form");
+const profileForm = profileModal.querySelector(".profile-form");
 const createBtn = createModal.querySelector(".modal__form-submit");
 const createForm = createModal.querySelector(".create-form");
 
