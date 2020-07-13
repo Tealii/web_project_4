@@ -47,7 +47,7 @@ const initialCards = [
 // modals
 const modal = document.querySelector(".modal");
 const profileModal = document.querySelector(".profile-modal");
-const figModal = document.querySelector(".fig-modal");
+// const figModal = document.querySelector(".fig-modal");
 const createModal = document.querySelector(".create-modal");
 
 // buttons
@@ -65,8 +65,8 @@ const figCloseBtn = figModal.querySelector(".modal__exit-btn");
 
 
 // elements dealing with figure modal
-const figModalImg = figModal.querySelector(".modal__fig");
-const figCap = figModal.querySelector(".modal__figcaption");
+// const figModalImg = figModal.querySelector(".modal__fig");
+// const figCap = figModal.querySelector(".modal__figcaption");
 
 // form inputs
 const name = document.querySelector(".profile-info__name");
@@ -100,6 +100,7 @@ figCloseBtn.addEventListener("click", () => {
 
 
 // functions & methods dealing with popUps and cards
+// 
 function addPlace(placeTitleValue, placeLinkValue) {
   const photoElem = photoTemplate.cloneNode(true);
   const pic = photoElem.querySelector(".photo-grid__pic");
@@ -131,6 +132,7 @@ function addPlace(placeTitleValue, placeLinkValue) {
   
   return photoElem;
 }
+// ///////////
 
 function insertCard(placeTitleValue, placeLinkValue) {
   photoContainer.prepend(addPlace(placeTitleValue, placeLinkValue));
